@@ -18,5 +18,9 @@ module.exports = {
               loader: "style-loader!css-loader!less-loader"
             }
         ]
+    },
+    devServer: {
+      inline: true,
+      contentBase: path.join(__dirname, 'example')
     }
 };
