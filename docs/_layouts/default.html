@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en-US">
+{% include head.html %}
+  <body>
+    <script>
+      var isMobile = /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      var isIpad = /iPad/i.test(navigator.userAgent);
+
+      if(isMobile || isIpad){
+        document.body.classList.add('is-mobile');
+      } else {
+        document.body.classList.add('is-desktop');
+      }
+    </script>
+      {{ content }}
+{% include footer.html %}
+  </body>
+</html>

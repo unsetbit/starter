@@ -1,0 +1,42 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>{% if page.title %}{{page.title}} - Starter{% else %}Starter{% endif %}</title>
+
+  <meta name="viewport" content="width=740, initial-scale=.5">
+  <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="icon" type="image/png" href="img/favicon-96x96.png">
+
+  <link href='//fonts.googleapis.com/css?family=Merriweather:400italic,400,700,700italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="description" content="{{ page.description }}" />
+
+  <!-- Twitter data -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@unsetbit">
+  <meta name="twitter:creator" content="@unsetbit">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ page.description }}">
+  <meta name="twitter:image" content="{{ page.image | prepend: site.baseurl | prepend: site.url }}">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="{{ page.title }} - unsetbit" />
+  <meta property="og:site_name" content="unsetbit" />
+  <meta property="og:type" content="{% if page.og_type %}{{ page.og_type }}{% else %}profile{% endif %}" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}" />
+  <meta property="og:image" content="{{ page.image | prepend: site.baseurl | prepend: site.url }}" />
+  <meta property="og:description" content="{{ page.description }}" />
+
+  {% if page.first_name %}<meta property="profile:first_name" content="{{ page.first_name }}" />{% endif %}
+  {% if page.last_name %}<meta property="profile:last_name" content="{{ page.last_name }}" />{% endif %}
+  {% if page.username %}<meta property="profile:username" content="{{ page.username }}" />{% endif %}
+  {% if page.section %}<meta property="article:section" content="{{ page.section }}" />{% endif %}
+  {% if page.tag %}{% for tag in page.tag %}<meta property="article:tag" content="{{ tag }}" />{% endfor %}{% endif %}
+  {% if page.see_also %}{% for see_also in page.see_also %}<meta property="og:see_also" content="{{ see_also | prepend: site.baseurl | prepend: site.url }}" />{% endfor %}{% endif %}
+
+  <meta property="fb:admins" content="1582950001" />
+</head>

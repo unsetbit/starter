@@ -1,0 +1,9 @@
+url: https://unsetbit.com
+enforce_ssl: unsetbit.com
+
+title: Starter
+description: >
+  A project.
+baseurl: ""
+
+permalink: pretty
