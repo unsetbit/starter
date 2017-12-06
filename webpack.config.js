@@ -4,6 +4,7 @@ module.exports = {
     entry: "./entry.js",
     output: {
         path: path.join(__dirname, 'docs'),
+        publicPath: '/',
         filename: "starter.js",
         library: 'starter',
         libraryTarget: 'var'
@@ -12,11 +13,11 @@ module.exports = {
       rules: [{
             test: /\.scss$/,
             use: [{
-                loader: "style-loader" // creates style nodes from JS strings
+                loader: "style-loader"
             }, {
-                loader: "css-loader" // translates CSS into CommonJS
+                loader: "css-loader"
             }, {
-                loader: "sass-loader" // compiles Sass to CSS
+                loader: "sass-loader"
             }]
         }],
         loaders: [
@@ -29,7 +30,7 @@ module.exports = {
     plugins: [],
     devServer: {
       inline: true,
-      contentBase: path.join(__dirname, 'docs', '_site')
+      contentBase: path.join(__dirname, 'example')
     },
     devtool: 'source-map'
 };

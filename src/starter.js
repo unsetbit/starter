@@ -1,3 +1,1 @@
-export default function() {
-  alert('Hello world!')
-}
+export const hello = 'world!';

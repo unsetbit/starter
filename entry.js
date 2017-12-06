@@ -1,3 +1,3 @@
 import './src/starter.scss'
-import starter from './src/starter'
-export default starter
+
+export * from './src/starter'
