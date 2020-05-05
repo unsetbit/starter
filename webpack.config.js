@@ -1,11 +1,11 @@
-var path = require('path');
+const path = require('path');
 
 module.exports = {
-    entry: "./entry.js",
+    entry: './entry.js',
     output: {
         path: path.join(__dirname, 'docs'),
         publicPath: '/',
-        filename: "starter.js",
+        filename: 'starter.js',
         library: 'starter',
         libraryTarget: 'var'
     },
@@ -13,21 +13,26 @@ module.exports = {
       rules: [{
             test: /\.scss$/,
             use: [{
-                loader: "style-loader"
+                loader: 'style-loader'
             }, {
-                loader: "css-loader"
-            }, {
-                loader: "sass-loader"
+                loader: 'css-loader'
             }]
-        }],
-        loaders: [
-          {
-            test: /\.js$/,
-            loader: 'babel-loader?presets[]=env'
+        },
+        {
+          test: /\.html$/,
+          use: [
+            {
+              loader: 'html-loader'
+            }
+          ]
+        },{
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader'
           }
-        ]
+        }]
     },
-    plugins: [],
     devServer: {
       inline: true,
       contentBase: path.join(__dirname, 'example')
