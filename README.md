@@ -5,7 +5,7 @@
 ## How to build this app
 1. Install [git](https://git-scm.com), [node](https://nodejs.org/), and
  [jekyll](https://jekyllrb.com/)
-2. Run `git clone git@github.com:unsetbit/starter.git && cd starter && npm install`
+2. Run `git clone https://github.com/unsetbit/starter.git && cd starter && npm install`
 3. Run `npm run dev`. This command starts the build system and starts serving
 the contents of the `docs/_site` directory at [http://localhost:8080](localhost:8080).
 4. Modify the contents of `src` and `docs` until the app looks just right
